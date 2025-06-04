@@ -1,17 +1,29 @@
 import './App.css'
 
-import Header from './components/Header'
-import Main from './components/Main'
-import Footer from './components/Footer'
+import Layout from '@pages/Layout'
+import Landing from '@pages/Landing'
+import Table from '@pages/Table'
 import { createBrowserRouter, RouterProvider, useLocation } from 'react-router-dom';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout/>,
+    children: [
+      { index: true, element: <Landing /> },
+      { path: "/reservations", element: <Table /> }
+    ],
+  },
+])
+
 
 export default function App() {
   return (
     <>
-      <Header />
-      <Main />
-      <br></br>
-      <Footer />
+        <RouterProvider router={router}>
+       </RouterProvider>
     </>
   )
 }
+
+

@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { fileURLToPath, URL } from 'node:url';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -13,7 +14,8 @@ export default defineConfig({
       '@styles': fileURLToPath(new URL('./src/assets/styles', import.meta.url)),
       '@components': fileURLToPath(
         new URL('./src/components', import.meta.url)
-      )
+      ),
+      '@media': fileURLToPath(new URL('./src/assets/media', import.meta.url)),
     },
   },
 })

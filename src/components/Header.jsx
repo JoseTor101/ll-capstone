@@ -1,8 +1,10 @@
 import '@styles/header.css'
+import Logo from '@media/Logo.svg'
 
 export default function Header(){
   return(
     <header>
+      <img src={Logo} id="logo" alt="ll-logo"></img>
       <nav>
         <ul>
           <li><a>Home</a></li>

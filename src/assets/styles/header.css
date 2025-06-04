@@ -1,4 +1,22 @@
+header {
+  display: flex;
+  flex-direction: row;
+
+}
+
+#logo{
+  flex: 0.2;
+  width: 100px;
+  height: auto;
+}
+
+nav{
+  flex: 0.8;
+}
+
 ul {
   display: flex;
   flex-direction: row;
+  list-style: none;
+  justify-content: space-between;
 }

@@ -1,2 +1,23 @@
-main {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: auto;
+  font-family: 'Poppins';
+  overflow-x: hidden;
+}
+
+button{
+  background-color: #F4CE14;
+  border: none;
+  border-radius: 16px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
 }

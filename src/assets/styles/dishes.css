@@ -1,0 +1,66 @@
+.dishes{
+  display: flex;
+  margin: 40px;
+  justify-content: space-between;
+}
+
+.dishes>h2{
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #495E57
+}
+
+.dish-cards{
+  padding-left: 40px;
+  padding-right: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.dish-card{
+  flex: 1 1 190px;
+  max-width: 300px;
+  min-width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.dish-card img{
+  width: 100%;
+  height: auto;
+  border-radius: 16px 16px 0px 0px;
+  display: block;
+}
+
+.dish-card-text{
+  height: 100%;
+  padding: 15px;
+  border: 1px dashed black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+.dish-card-header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.dish-card-header>p{
+  font-weight: bold;
+  color: #EE9972;
+}
+
+
+.dish-card-text>p:last-child{
+  color: #495E57;
+  font-weight: bold;
+  font-size: 1rem;
+}

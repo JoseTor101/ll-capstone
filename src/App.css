@@ -1,3 +1,12 @@
+:root{
+  --primary-color: #495E57;
+  --secondary-color: #F4CE14;
+  --accent-color: #EE9972;
+  --background-color: #EDEFEE;
+  --text-color: #333333;
+  --font-family: 'Poppins', sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;

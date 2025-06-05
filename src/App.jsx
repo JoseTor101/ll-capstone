@@ -3,6 +3,7 @@ import './App.css'
 import Layout from '@pages/Layout'
 import Landing from '@pages/Landing'
 import Booking from '@pages/Booking'
+import ConfirmedBooking from '@components/ConfirmedBooking'
 import { createBrowserRouter, RouterProvider, useLocation } from 'react-router-dom';
 
 const router = createBrowserRouter([
@@ -11,7 +12,8 @@ const router = createBrowserRouter([
     element: <Layout/>,
     children: [
       { index: true, element: <Landing /> },
-      { path: "/booking", element: <Booking /> }
+      { path: "/booking", element: <Booking /> },
+      { path: "/confirmed", element: <ConfirmedBooking /> }
     ],
   },
 ])

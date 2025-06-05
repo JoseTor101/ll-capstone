@@ -12,7 +12,9 @@
         style={{ display: "grid", maxWidth: "200px", gap: "20px" }}
         aria-label="Table booking form"
       >
-        <label htmlFor="date">Choose date</label>
+        <label 
+          htmlFor="date"
+          data-test-id="date-label">Choose date</label>
         <input
           type="date"
           id="date"
@@ -58,7 +60,7 @@
           <option>Anniversary</option>
         </select>
 
-        <input type="submit" value="Make Your reservation" aria-label="Submit reservation" />
+        <input type="submit" data-testid="submit-btn" value="Make Your reservation" aria-label="Submit reservation" />
       </form>
     );
   }

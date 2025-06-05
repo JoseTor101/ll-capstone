@@ -60,7 +60,7 @@
           <option>Anniversary</option>
         </select>
 
-        <input type="submit" value="Make Your reservation" aria-label="Submit reservation" />
+        <input type="submit" data-testid="submit-btn" value="Make Your reservation" aria-label="Submit reservation" />
       </form>
     );
   }

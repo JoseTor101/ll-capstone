@@ -1,14 +1,22 @@
-import BookingForm from "@components/BookingForm";
 import React, { useState, useReducer } from "react";
+import { useNavigate } from "react-router-dom";
+import BookingForm from "@components/BookingForm";
 
-const initializeTimes = () => ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
-
+const initializeTimes = () => {
+  const today = new Date();
+  return window.fetchAPI(today);
+};
 
 const updateTimes = (state, action) => {
-    return initializeTimes();
+  if(action.type === "update_times" && action.date){
+    return window.fetchAPI(new Date(action.date));
+  }
+    return state;
 }
 
 export default function Booking() {
+  const navigate = useNavigate();
+
   const [availableTimes, dispatch] = useReducer(updateTimes, [], initializeTimes);
   
   const [form, setForm] = useState({
@@ -31,6 +39,8 @@ export default function Booking() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(form);
+    const uploaded = window.submitAPI(form);
+    uploaded && navigate("/confirmed");
   };
 
   return (
@@ -44,3 +54,6 @@ export default function Booking() {
     </>
   );
 }
+
+
+export {Booking, initializeTimes, updateTimes}

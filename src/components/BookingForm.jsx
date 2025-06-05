@@ -10,24 +10,30 @@
       <form
         onSubmit={handleSubmit}
         style={{ display: "grid", maxWidth: "200px", gap: "20px" }}
+        aria-label="Table booking form"
       >
-        <label htmlFor="res-date">Choose date</label>
+        <label htmlFor="date">Choose date</label>
         <input
           type="date"
           id="date"
           value={form.date}
           onChange={handleChange}
+          aria-required="true"
         />
-        <label htmlFor="res-time">Choose time</label>
+
+        <label htmlFor="time">Choose time</label>
         <select
           id="time"
           value={form.time}
           onChange={handleChange}
+          aria-required="true"
+          aria-label="Choose time"
         >
           {availableTimes.map((time) => (
             <option key={time}>{time}</option>
           ))}
         </select>
+
         <label htmlFor="guests">Number of guests</label>
         <input
           type="number"
@@ -37,17 +43,22 @@
           id="guests"
           value={form.guests}
           onChange={handleChange}
+          aria-required="true"
+          aria-label="Number of guests"
         />
+
         <label htmlFor="occasion">Occasion</label>
         <select
           id="occasion"
           value={form.occasion}
           onChange={handleChange}
+          aria-label="Occasion"
         >
           <option>Birthday</option>
           <option>Anniversary</option>
         </select>
-        <input type="submit" value="Make Your reservation" />
+
+        <input type="submit" value="Make Your reservation" aria-label="Submit reservation" />
       </form>
     );
   }

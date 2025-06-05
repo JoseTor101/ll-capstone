@@ -2,7 +2,7 @@ import './App.css'
 
 import Layout from '@pages/Layout'
 import Landing from '@pages/Landing'
-import Table from '@pages/Table'
+import Booking from '@pages/Booking'
 import { createBrowserRouter, RouterProvider, useLocation } from 'react-router-dom';
 
 const router = createBrowserRouter([
@@ -11,7 +11,7 @@ const router = createBrowserRouter([
     element: <Layout/>,
     children: [
       { index: true, element: <Landing /> },
-      { path: "/reservations", element: <Table /> }
+      { path: "/booking", element: <Booking /> }
     ],
   },
 ])

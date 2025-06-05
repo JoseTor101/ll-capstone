@@ -4,7 +4,6 @@
   --accent-color: #EE9972;
   --background-color: #EDEFEE;
   --text-color: #333333;
-  --font-family: 'Poppins', sans-serif;
 }
 
 * {
@@ -18,9 +17,15 @@ html {
   margin: 0;
   padding: 0;
   height: auto;
-  font-family: 'Poppins';
+  font-family: 'Karla', sans-serif;
   overflow-x: hidden;
 }
+
+h1{
+  font-family: "Markazi Text", serif;
+  font-optical-sizing: auto;
+}
+
 
 button{
   background-color: #F4CE14;
@@ -29,4 +34,6 @@ button{
   padding: 10px 20px;
   font-weight: bold;
   cursor: pointer;
+  font-family: 'Karla', sans-serif;
+  font-size: 0.9rem;
 }

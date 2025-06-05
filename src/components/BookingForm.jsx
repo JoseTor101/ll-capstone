@@ -3,6 +3,7 @@
   export default function BookingForm({
     availableTimes,
     form,
+    formIsValid,
     handleChange,
     handleSubmit
   }) {
@@ -21,6 +22,7 @@
           value={form.date}
           onChange={handleChange}
           aria-required="true"
+          required
         />
 
         <label htmlFor="time">Choose time</label>
@@ -28,8 +30,10 @@
           id="time"
           value={form.time}
           onChange={handleChange}
+          placeholder="Eg. 17:00"
           aria-required="true"
           aria-label="Choose time"
+          required
         >
           {availableTimes.map((time) => (
             <option key={time}>{time}</option>
@@ -47,6 +51,7 @@
           onChange={handleChange}
           aria-required="true"
           aria-label="Number of guests"
+          required
         />
 
         <label htmlFor="occasion">Occasion</label>
@@ -55,12 +60,13 @@
           value={form.occasion}
           onChange={handleChange}
           aria-label="Occasion"
+          required
         >
           <option>Birthday</option>
           <option>Anniversary</option>
         </select>
 
-        <input type="submit" data-testid="submit-btn" value="Make Your reservation" aria-label="Submit reservation" />
+        <input type="submit" data-testid="submit-btn" value="Make Your reservation" aria-label="Submit reservation" disabled={!formIsValid}/>
       </form>
     );
   }

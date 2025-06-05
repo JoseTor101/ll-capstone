@@ -35,12 +35,14 @@ test('updateTimes returns the correct times',()=>{
 });
 
 
+
 test('Submit is successful', () => {
   const handleSubmit = jest.fn((e) => e.preventDefault());
   render(
     <BookingForm
-      form={{ date: "", time: "", guests: "", occasion: "" }}
+      form={{ date: "2023-06-05", time: "17:00", guests: "2", occasion: "Birthday" }}
       handleChange={() => {}}
+      formIsValid={true}
       handleSubmit={handleSubmit}
       availableTimes={["17:00", "18:00"]}
     />
@@ -50,4 +52,19 @@ test('Submit is successful', () => {
   fireEvent.click(submitButton);
 
   expect(handleSubmit).toHaveBeenCalled();
+});
+
+test('Submit button is disabled when form is empty', () => {
+  render(
+    <BookingForm
+      form={{ date: "", time: "", guests: "", occasion: "" }}
+      handleChange={() => {}}
+      formIsValid={false}
+      handleSubmit={() => {}}
+      availableTimes={["17:00", "18:00"]}
+    />
+  );
+
+  const submitButton = screen.getByTestId("submit-btn");
+  expect(submitButton).toBeDisabled();
 });

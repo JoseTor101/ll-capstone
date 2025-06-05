@@ -1,0 +1,12 @@
+footer{
+  min-height: 5vh;
+  background-color: var(--primary-color);
+  display: grid;
+  place-items: center;
+}
+
+footer > p{
+  color: white;
+  font-size: 1.2rem;
+  font-weight: semibold;
+}

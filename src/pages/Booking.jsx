@@ -1,7 +1,9 @@
-import React, { useState, useReducer } from "react";
+import React, { useState, useReducer, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import BookingForm from "@components/BookingForm";
+import chef from "@media/chef.jpg";
 
+import '@styles/booking.css'
 const initializeTimes = () => {
   const today = new Date();
   return window.fetchAPI(today);
@@ -12,7 +14,7 @@ const updateTimes = (state, action) => {
     return window.fetchAPI(new Date(action.date));
   }
     return state;
-}
+} 
 
 export default function Booking() {
   const navigate = useNavigate();
@@ -25,6 +27,16 @@ export default function Booking() {
     guests: "",
     occasion: "",
   });
+
+
+  const formIsValid = useMemo(() => {
+    return (
+      form.date.trim() !== "" &&
+      form.time.trim() !== "" &&
+      form.guests.trim() !== "" &&
+      form.occasion.trim() !== ""
+    );
+  }, [form]);
 
   const handleChange = (e) => {
     setForm({
@@ -44,14 +56,22 @@ export default function Booking() {
   };
 
   return (
-    <>
-      <BookingForm
-        availableTimes={availableTimes}
-        form={form}
-        handleChange={handleChange}
-        handleSubmit={handleSubmit}
-      />
-    </>
+    <section id="booking-c">
+      <div className="l-booking">
+        <h1 id="booking-header">Book a table</h1>
+        <BookingForm
+          availableTimes={availableTimes}
+          form={form}
+          formIsValid={formIsValid}
+          handleChange={handleChange}
+          handleSubmit={handleSubmit}
+        />
+      </div>
+      <div className="r-booking">
+        <img src={chef} alt="restaurant food"></img>
+      </div>
+      
+    </section>
   );
 }
 

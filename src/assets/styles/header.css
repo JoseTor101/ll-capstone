@@ -4,6 +4,7 @@ header {
   padding: 5px 40px 5px 40px;
   font-weight: bold;
   align-items: center;
+  justify-content: space-between;
 }
 
 #logo{
@@ -23,9 +24,44 @@ ul {
   list-style: none;
   justify-content: space-between;
   vertical-align: middle;
+  flex-wrap: wrap;
+  padding-left: 20px;
 }
 
 li > a{
   text-decoration: none;
   color: #333333;
+}
+
+.burger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: -20px;
+}
+
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+    margin-left: auto;
+  }
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 60px; /* adjust as needed */
+    right: 40px;
+    width: 200px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    padding: 10px;
+  }
+  nav.open ul {
+    display: flex;
+  }
+  li:hover{
+    background: var(--secondary-color);
+  }
 }
